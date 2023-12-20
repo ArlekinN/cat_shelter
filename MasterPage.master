@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        
+
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+       
+        <table class="auto-style1">
+            <tr>
+                <td >
+                    <asp:Image ID="Image_icon" runat="server" src="/image/icon.jpg" AlternateText="icon" width="100px" />
+                </td>
+                <td width="70%" style="text-align:center; font-weight:bold; font-size:large" valign="Middle" >Твой котик<br />
+                </td>
+                <td style="text-align:center; font-size:large" valign="Middle" >
+                    <asp:ImageButton ID="ImageButton_profile" runat="server" src="/image/profile.png" AlternateText="profile" width="50px"  OnClick="To_profile" />
+                    <br />
+                    <asp:Button ID="Bt_Admin" runat="server" Text="Управление" OnClick="Page_admin" />
+                </td>
+                <td width="100px"><table >
+                    <tr>
+                        <td>
+                            <asp:Label ID="Data" runat="server" Text="Данные"></asp:Label>
+                        </td>
+                        <td colspan="2" style="color:red">
+                            <asp:Label ID="Error" runat="server" Text="Ошибка входа"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Text_login" runat="server" Text="Логин"></asp:Label>
+                        </td>
+                        <td colspan="2">
+                            <asp:TextBox ID="Enter_login" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Text_password" runat="server" Text="Пароль"></asp:Label>
+                        </td>
+                        <td colspan="2">
+                            <asp:TextBox ID="Enter_password" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <asp:Button ID="Button_exit" runat="server" Text="Выход" onClick="Exit"/></td>  
+                        <td><asp:Button ID="Button_entry" runat="server" Text="Вход" OnClick="Entery" /></td>
+                        <td style="text-align:center">
+                            <asp:Button ID="Button_regestration" runat="server" Text="Регистрация" OnClick="To_regestration"  />
+
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" style="vertical-align: top">
+                    <table>
+                        <tr>
+                            <td>
+                                <asp:LinkButton ID="LinkButton_main" 
+                                    runat="server" 
+                                    Text="Главная"
+                                    OnClick="LinkButton_to_main"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:LinkButton ID="LinkButton_catalog"
+                                    runat="server" 
+                                    Text="Каталог питомцев"
+                                    OnClick="LinkButton_to_catalog"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:LinkButton ID="LinkButton_event" 
+                                    runat="server" 
+                                    Text="Мероприятия"
+                                    OnClick="LinkButton_to_event"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:LinkButton ID="LinkButton_donat" runat="server" Text="Пожертвование"
+                                    OnClick="LinkButton_to_donat"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:LinkButton ID="LinkButton_rules_cat" runat="server" Text="Правила сдачи котика в приют"
+                                    OnClick="LinkButton_to_rules_cat"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:LinkButton ID="LinkButton_volonteer" runat="server" Text="Волонтеры"
+                                    OnClick="LinkButton_to_volonteer"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:LinkButton ID="LinkButton_dop_info" runat="server" Text="Информация о приюте"
+                                    OnClick="LinkButton_to_dop_info"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="3" style="text-align:center" valign="Top"> 
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+       
+    </div>
+    </form>
+</body>
+</html>
